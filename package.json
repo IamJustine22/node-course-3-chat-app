@@ -6,12 +6,17 @@
   "dependencies": {
     "express": "^4.14.0",
     "hbs": "^4.0.0",
+    "nodemon": "^1.10.2",
     "socket.io": "^1.4.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "author": "",
   "license": "ISC"
