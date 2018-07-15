@@ -18,7 +18,7 @@ expect(message).toInclude({from, text});
 
 
 describe('generateLocationMessage', () => { 
-it('shoul generate correct location object', () => {
+it('should generate correct location object', () => {
 
     var from = 'Deb';
     var latitude = 15;
