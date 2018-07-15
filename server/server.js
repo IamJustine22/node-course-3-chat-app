@@ -45,14 +45,14 @@ socket.on('createMessage', (message, callback) => {
 
     }
 
-
-
-    io.emit('newMessage' , generateMessage(message.from, message.text));
     callback();
 });
    socket.on('createLocationMessage', (coords) => {
-io.emit('newLocationMessage', generateLocationMessage('Admin',coords.latitude,coords.longitude));
-   });
+       var user = users.getUser(socket.id);
+       if(user) {
+io.to(user.name).emit('newLocationMessage', generateLocationMessage(user.name,coords.latitude,coords.longitude));
+       }
+});
 
 
      socket.on('disconnect', () => {
