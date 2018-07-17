@@ -114,8 +114,8 @@ locationButton.attr('disabled', 'disabled').text('Sending location...');
 
         jQuery('[name=message]').val('')
 socket.emit('createLocationMessage' ,{
-    latitude:position.coords.latitude,
-    longitude:position.coords.longitude
+    latitude: position.coords.latitude,
+    longitude: position.coords.longitude
 });
     }, function () {
         locationButton.removeAttr('disabled').text('Sending location');
